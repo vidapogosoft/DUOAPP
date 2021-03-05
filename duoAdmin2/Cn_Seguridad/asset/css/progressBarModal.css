@@ -1,0 +1,13 @@
+.progressBarModal
+{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1 !important;/*0.8*/
+    /*-moz-opacity: 0.4;*/ /*0.8*/
+    background: rgba( 173, 173, 173, .8 ) none 50% 50% no-repeat;
+    
+}

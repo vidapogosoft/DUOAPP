@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6209a3438eed4c2f83489cac166236fd" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="DBSCCModel.adcompania" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" FillColor="Blue" />
+        <EntityTypeShape EntityType="DBSCCModel.adlocalidades" Width="1.5" PointX="2.75" PointY="0.75" FillColor="Blue" />
+        <EntityTypeShape EntityType="DBSCCModel.adusuarionotificacion" Width="1.5" PointX="2.625" PointY="3.875" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="DBSCCModel.adusuarios" Width="1.5" PointX="4.625" PointY="0.75" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="DBSCCModel.adcompanialocalidad" Width="1.5" PointX="4.5" PointY="4.75" FillColor="Blue" />
+        <EntityTypeShape EntityType="DBSCCModel.adusuariolocalidad" Width="1.5" PointX="6.75" PointY="0.875" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="DBSCCModel.adusuarioscompania" Width="1.5" PointX="6.5" PointY="4.125" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="DBSCCModel.adperfil" Width="1.5" PointX="8.875" PointY="1" FillColor="Red" />
+        <EntityTypeShape EntityType="DBSCCModel.adperfilmenu" Width="1.5" PointX="11" PointY="0.875" FillColor="Red" />
+        <EntityTypeShape EntityType="DBSCCModel.adusuarioperfil" Width="1.5" PointX="8.75" PointY="4.375" FillColor="Red" />
+        <EntityTypeShape EntityType="DBSCCModel.admenu" Width="1.5" PointX="13" PointY="3.25" FillColor="Green" />
+        <EntityTypeShape EntityType="DBSCCModel.admodulo" Width="1.5" PointX="11" PointY="4.5" FillColor="Green" />
+        <EntityTypeShape EntityType="DBSCCModel.adusuarioafiliado" Width="1.5" PointX="3.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DBSCCModel.PerfilDuo" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DBSCCModel.Registrado" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DBSCCModel.persona" Width="1.5" PointX="0.5" PointY="5.875" FillColor="Purple" />
+        <EntityTypeShape EntityType="DBSCCModel.AnuncioImages" Width="1.5" PointX="6" PointY="14.75" />
+        <EntityTypeShape EntityType="DBSCCModel.Anuncio" Width="1.5" PointX="4" PointY="11.5" />
+        <EntityTypeShape EntityType="DBSCCModel.Products" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DBSCCModel.works" Width="1.5" PointX="13.75" PointY="7.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

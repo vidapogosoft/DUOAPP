@@ -1,0 +1,22 @@
+﻿.transitionRow {
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+    
+    animation-name: example;
+    animation-duration: 0.5s;
+}
+
+
+@keyframes example {
+    0% {background-color:    rgba(81, 192, 217, 1.1);}
+    10% {background-color:   rgba(81, 192, 217, 1);}
+    20% {background-color:   rgba(81, 192, 217, 0.9);}
+    30% {background-color:   rgba(81, 192, 217, 0.8);}
+    40% {background-color:   rgba(81, 192, 217, 0.7);}
+    50% {background-color:   rgba(81, 192, 217, 0.6);}
+    60% {background-color:   rgba(81, 192, 217, 0.5);}
+    70% {background-color:   rgba(81, 192, 217, 0.4);}
+    80% {background-color:   rgba(81, 192, 217, 0.3);}
+    90% {background-color:   rgba(81, 192, 217, 0.2);}
+    100% {background-color:  rgba(81, 192, 217, 0.1);}
+}

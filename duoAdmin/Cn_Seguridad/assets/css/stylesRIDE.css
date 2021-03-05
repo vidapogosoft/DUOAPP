@@ -1,0 +1,480 @@
+.stylePadding
+{
+    padding-right: 3%;    
+}
+
+.datosemisor
+{
+    border-style: solid;
+    border-width: 1.5px;
+    width: 320px;
+    height: 205px;
+}
+
+.datoscomprobantes
+{
+    border-style: solid;
+    border-width: 1.5px;
+    width: 354px;
+    height: 258px;
+}
+
+.datosCabecera
+{
+    border-style: solid;
+    border-width: 1.5px;
+}
+
+.texto
+{
+    font-size: 12px;
+}
+
+.textoDatosGuia
+{
+    font-size: 12px;
+}
+
+
+.textoInfoAdicional
+{
+    font-size: 12px;
+    padding: 10px;
+}
+
+.textoGuia
+{
+    font-size: 12px;
+    padding: 2.5px;
+}
+
+.textotoatales
+{
+    font-size: 9px;
+    padding: 10px;
+    width: 100px;
+    text-align: right;
+}
+
+.textovalores
+{
+    font-size: 11px;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 250px;
+    text-align: right;
+}
+
+.textoemisor
+{
+    font-size: 11px;
+}
+
+.textocomprobante
+{
+    font-size: 12px;
+}
+
+.imagen
+{
+    width: 330px;
+    height: 80px;
+    text-align: center;
+}
+
+
+.datosreceptor
+{
+    border-style: solid;
+    border-width: 1.5px;
+    width: 690px;
+    height: 56px;
+    margin-left: 5px;
+}
+
+.datosreceptormanual
+{    
+    width: 690px;
+    height: 56px;
+    margin-left: 5px;
+}
+
+.datosproductos
+{
+    font-size: 11px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.datosvalores
+{
+    border-style: solid;
+    border-width: 0.5px;
+    width: 277px;
+    height: 200px;
+    padding: -2px;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.datosinfo
+{
+    border-style: solid;
+    border-width: 1.5px;
+    width: 380px;
+    height: 100px;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+
+
+
+.datosgridvalores
+{
+    border-style: solid;
+    border-width: 1.5px;
+    width: 300px;
+    height: 300px;
+    margin-left: 5px;
+    font-size: 10px;
+    padding: 10px;
+    width: 50px;
+    text-align: right;
+}
+
+
+table.gridtable
+{
+    font-size: 11px;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+table.gridtable th
+{
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+}
+table.gridtable td
+{
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+}
+
+
+/*HOJAS DE ESTILO PARA M&M*/
+.style5
+{
+    width: 335px;
+    text-align: left;
+}
+.style12
+{
+    width: 244px;
+}
+.style14
+{
+    text-align: center;
+    font-size: 8px;
+    height: 71px;
+}
+.style17
+{
+    font-size: 8px;
+    height: 10px;
+    width: 49px;
+}
+.style18
+{
+    font-weight: bold;
+    font-size: 8px;
+    height: 7px;
+    width: 49px;
+    text-align: center;
+}
+.style19
+{
+    font-size: 8px;
+    text-align: center;
+    height: 57px;
+}
+.style20
+{
+    font-size: 8px;
+    height: 10px;
+    width: 135px;
+}
+.style22
+{
+    font-weight: bold;
+    font-size: 8px;
+    height: 7px;
+    width: 135px;
+    text-align: center;
+}
+.style23
+{
+    width: 551px;
+    height: 189px;
+}
+
+.datosvaloresMM
+{
+    border-style: solid;
+    border-width: 0.5px;
+    font-size: 12px;
+}
+
+.datosproductosMM
+{
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.datosCabeceraMM
+{
+    font-size: 9px;
+    text-align: center;
+}
+.style24
+{
+    font-size: 9px;
+    text-align: left;
+}
+.style25
+{
+    text-align: left;
+}
+.style27
+{
+    font-size: 12px;
+    text-align: center;
+}
+
+.datosCabeceraClienteMM
+{
+    font-size: 12px;
+}
+
+.tablaClienteMM
+{
+    border-style: solid;
+    border-width: 1.5px;
+    margin-top: 10px;
+}
+
+
+.tablaDetalleMM
+{
+    border-style: solid;
+    border-width: 1.5px;
+    margin-top: 10px;
+}
+
+.tablaCabeceraDetalleMM
+{
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #3399FF;
+}
+
+.tablaCabeceraDetalleHRG
+{
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #791213;
+}
+
+.tablaCabeceraDetalleLUJOR
+{
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #EC3525;
+}
+
+
+.tablaCabeceraComprobanteMM
+{
+    border-style: solid;
+    border-width: 1.5px;
+}
+
+.style1
+{
+    text-align: center;
+}
+.style2
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-small;
+}
+.style3
+{
+    font-size: 9px;
+    width: 689px;
+}
+
+
+.datosvalores
+{
+    border-style: solid;
+    border-width: 0.5px;
+    padding: -2px;
+    margin-left: 5px;
+    font-size: xx-small;
+}
+
+.style5
+{
+    width: 399px;
+    text-align: left;
+}
+.style7
+{
+    font-size: xx-small;
+    text-align: center;
+}
+.style9
+{
+    text-align: center;
+    font-size: xx-small;
+}
+.style29
+{
+    font-size: xx-small;
+    width: 105px;
+}
+.style30
+{
+    font-size: medium;
+}
+.style31
+{
+    font-size: medium;
+}
+.style32
+{
+    font-size: small;
+}
+.style33
+{
+    height: 119px;
+}
+
+.style34
+{
+    font-size: 12px;
+}
+.style35
+{
+    font-size: 12px;
+    height: 13px;
+    width: 92px;
+}
+.style36
+{
+    height: 13px;
+}
+.style37
+{
+    font-size: xx-small;
+    height: 13px;
+}
+.style38
+{
+    font-size: 12px;
+    width: 92px;
+}
+
+.datoValorRetenido
+{
+    font-size: 12px;
+}
+
+.cabeceraDetalleComprobanteRetencionMM
+{
+    padding: 1.5px 1.5px 1.5px 1.5px;
+    background-color: #3399FF;
+}
+
+.cabeceraDetalleComprobanteRetencionHRG
+{
+    padding: 1.5px 1.5px 1.5px 1.5px;
+    background-color: #791213;
+}
+
+.cabeceraDetalleComprobanteRetencionLUJOR
+{
+    padding: 1.5px 1.5px 1.5px 1.5px;
+    background-color: #EC3525;
+}
+
+.detalleComprobanteRetencion
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/*stylos temporales GRY*/
+.formatoentorno
+{
+    border-style: solid;
+    border-width: 0.5px;
+    padding: 3.5px;
+    margin-left: 12px;
+    font-size: 11px;
+}
+.formatovalor
+{
+    border-style: solid;
+    border-width: 0.5px;
+    padding: 3.5px;
+    margin-left: 12px;
+    font-size: 11px;
+    text-align: right;
+}
+
+.datosformapago
+{
+    border: 0.5px solid black;
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 1px;
+    width: 310px;
+    height: 90px;
+    margin-left: 5px;
+}
+
+.textoformapago
+{
+    border: solid 0.5px black;
+    font-size: 10px;
+}
+
+.valorformapago
+{
+    border: solid 0.5px black;
+    font-size: 10px;
+    text-align: right;
+}
+
+
+.tituloformapago
+{
+    border: solid 0.5px black;
+    font-size: 12px;
+    height: 11px;
+}
+
+.notaDeVenta
+{
+    border-style: solid;
+    border-width: 1.5px; 
+    width: 100%;    
+}

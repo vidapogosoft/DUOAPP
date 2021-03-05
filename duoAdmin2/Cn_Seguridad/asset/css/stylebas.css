@@ -1,0 +1,394 @@
+﻿.online_reservation2 {
+top: 26%;
+left: 1%;
+width: 98%;
+}
+.b_room2{
+	
+	box-shadow: 0px 0px 4px rgb(97, 97, 97);
+	-webkit-box-shadow: 0px 0px 4px rgb(97, 97, 97);
+	-moz-box-shadow: 0px 0px 4px rgb(97, 97, 97);
+	-o-box-shadow: 0px 0px 4px rgb(97, 97, 97);
+	width: 100%;
+	position:absolute;
+}
+
+
+.booking_room2 {
+width: 100%;
+position:absolute;
+top:-1em;
+left:18%;
+z-index:1;
+}
+.booking_room2 h4{
+	font-size: 1.5em;
+	color: #202020;
+	text-transform: capitalize;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.booking_room2 p{
+	font-size: 0.8725em;
+	color: #6b6b6b;
+	line-height: 1.8em;
+}
+
+
+
+.booking_room2 {
+width: 88%;
+left:3%;
+top: -1.5em;
+}
+
+
+.reservation2{
+	font-family: 'Open Sans', sans-serif;
+	padding:8px 5px;
+	float: left;
+	width:100%;
+	background:#6b6b6b;
+	box-shadow: 1px 13px 15px -6px;
+    height: 53px;
+    margin-top:24px;
+}
+.reservation2 ul li{
+	float: left;
+	list-style:none;
+}
+.reservation2 ul li.left{
+	margin-left: 15px;
+}
+.reservation2 ul li.span1_of_1{
+width: 16.99%;
+margin-left: 1em;
+}
+
+.reservation2 ul li.span1_of_2{
+	width: 9.33333%;
+}
+.reservation2 ul li.span1_of_3{
+	width: 18.33333%;
+	margin-left: 20px;
+}
+.reservation2 h5{
+	font-size: 15px;
+	color: #FFD700;
+	text-transform: capitalize;
+	margin-bottom: 6px;
+    float:left;
+}
+.asplabel {
+
+    font-family: 'Quicksand', sans-serif;
+color:#fff;
+font-size:1.1em;
+margin:0.7em 0 0 1em;
+font-style:normal;
+
+}
+
+
+.asplabelida {
+
+    font-family: 'Quicksand','Comic Sans MS';
+color:#fff;
+font-size:1.4em;
+margin:0.7em 0 0 1em;
+font-style:normal;
+
+}
+
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:1234;
+    overflow: auto;
+    width: 100px; /* width of the spinner gif */
+    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+
+.luz.on{
+  color: #0099ff;/*color del texto al cambiar*/
+  text-shadow:
+     1px  1px rgba(255, 255, 255, .1),
+    -1px -1px rgba(0, 0, 0, .88),
+     0px  0px 20px #0099ff;/*color de la luz del texto*/
+}
+.luz{
+  font-size:80px;/*tamaño de la fuente*/
+  color: #000000;
+  text-shadow:
+     1px  1px rgba(255, 255, 255, .1),
+    -1px -1px rgba(0, 0, 0, .88);
+}
+
+
+.neon {
+	font-size: 100px;
+	letter-spacing:-2px;
+	color: #fff;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 25px #ff00de;
+	-webkit-text-fill-color: #F4ECFF;
+	-webkit-text-stroke-color:#C546F7;
+	-webkit-text-stroke-width:0.2px; 
+}
+
+
+.ParaIni input[type="text"] {
+font-family:Calibri;
+padding: 7px;
+display: block;
+background:#fff;
+outline: none;
+color: #555555;
+font:bold;
+font-size: 1em;
+border: 1px solid #2A2E33;
+-webkit-appearance: none;
+text-align:center;
+font-size:larger;
+width:60%;
+margin-left:80px;
+
+
+background: #ffffff;
+	border: 1px solid #DFDFDF;
+	border-radius: 9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	-o-border-radius: 9px;
+	
+}
+
+
+.Formapago {
+background: url(../images/rooms.jpg) repeat-y 0px 0px;
+background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+/*margin-top:5px;*/
+}
+
+
+.fpContenedor {
+	position: relative;
+	max-width: 100%;
+    float:left;
+    width:50%;
+    /*border:double;*/
+}
+
+.fplibro{
+padding:2em 0;
+}
+
+.fplibro{
+margin:2em 0;
+    top: 0px;
+    left: 0px;
+    width:90%;
+    margin-left:10px;
+    
+
+}
+
+.fplibro h5 {
+display: block;
+color: #252525;
+font-weight:600;
+line-height: 1.5em;
+margin: 15px 0 2px 0;
+}
+
+
+
+.fplibro h3 {
+font-family: 'Pinyon Script', cursive;
+font-size: 3.5em;
+text-align:center;
+}
+
+
+
+
+.fplibro input[type="text"],.booking-form textarea {
+font-family: 'Open Sans', sans-serif;
+padding: 7px;
+display: block;
+background: transparent;
+outline: none;
+color: #333333;
+font-size: 1em;
+border: 1px solid #2A2E33;
+-webkit-appearance: none;
+width:90%;
+    text-align: center;
+}
+.fplibro input[type="text"]:hover,.booking-form textarea:hover {
+border: 1px solid #FFD700;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+.fpDatosFactura {
+    width: 100%;
+	margin-left: 10px;
+	margin-right: 10px;
+    
+}
+
+.fpDatosFacturaDet {
+    width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+    
+}
+
+.fpDatosFacturaDetDer {
+    width: 38%;
+    
+}
+
+.fpDatosFacturaDetIzq {
+    width: 48%;
+    float: right;
+}
+
+.fpDatos {
+}
+
+
+.fpDatos h4 {
+font-family: 'Pinyon Script', cursive;
+font-size: 2.5em;
+text-align:center;
+
+}
+
+.fpopciones {
+
+    
+    
+}
+
+.fpopciones ul{
+    margin: 0; padding: 0; list-style-type: none; text-align: center;
+    
+}
+
+.fpopciones ul li{
+    float: left; display: inline;
+ }
+
+
+.fpopciones ul li input[type="button"]{
+    
+color: #2B2A1F;
+background: #E7CB2C;
+font-size: 12px;
+padding: 8px 27px;
+font-weight: bold;
+border-radius: 10px;
+-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+
+margin-top: 2em;
+/*width: 41% ;*/
+outline:none;
+border:2px solid #E7CB2C;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.fpopciones ul li input[type="button"]:hover{
+background:#333333;
+border:2px solid #fff;
+color:#fff;
+}
+
+
+
+
+
+
+
+.fpopciones ul li input[type="submit"]{
+    
+color: #2B2A1F;
+background: #E7CB2C;
+font-size: 12px;
+padding: 8px 27px;
+font-weight: bold;
+border-radius: 10px;
+-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+
+margin-top: 2em;
+/*width: 41% ;*/
+outline:none;
+border:2px solid #E7CB2C;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.fpopciones ul li input[type="submit"]:hover{
+background:#333333;
+border:2px solid #fff;
+color:#fff;
+}
+
+.onlineSegundaLeyenda {
+
+      top: 26%;left: 1%;width: 98%;
+}
+
+.SegundaLeyendaArma {
+
+     box-shadow: 0px 0px 4px rgb(97, 97, 97);
+     	-webkit-box-shadow: 0px 0px 4px rgb(97, 97, 97);	-moz-box-shadow: 0px 0px 4px rgb(97, 97, 97);	
+         -o-box-shadow: 0px 0px 4px rgb(97, 97, 97);
+	width: 100%;	position:absolute;background:#00ff21 ;
+}
+
+.TerceraLeyendaArma {
+    position:absolute;z-index:1;width: 65%;left:15%;top: 1.9em; background:#b6ff00;
+    margin-top:23px;
+}
+
+.CuartaLeyendaArma {
+    font-family: 'Open Sans', sans-serif; text-align:center;	padding:8px 5px;	float: left;
+    	width:100%;	background:#ffd800;	box-shadow: 1px 13px 15px -6px;    height: 35px;
+}
+
+
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white; 
+}

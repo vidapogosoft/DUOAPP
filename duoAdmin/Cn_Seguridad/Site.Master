@@ -1,0 +1,331 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Cn_Seguridad.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%#Page.Title %>  CHOPIN APP</title>
+
+
+    <link href="<%#ResolveUrl("~/asset/vendors/bootstrap/dist/css/bootstrap.min.css")%>" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="<%#ResolveUrl("~/asset/vendors/font-awesome/css/font-awesome.min.css")%>" rel="stylesheet" />
+
+    <link rel="stylesheet" href="<%#ResolveUrl("~/asset/css/material-icons.css")%>" />
+
+    <!-- bootstrap-daterangepicker -->
+    <link href="<%#ResolveUrl("~/asset/vendors/bootstrap-daterangepicker/daterangepicker.css")%>" rel="stylesheet" />
+    <!-- bootstrap-datetimepicker -->
+    <link href="<%#ResolveUrl("~/asset/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css")%>" rel="stylesheet" />
+
+    <!-- iCheck -->
+    <link href="<%#ResolveUrl("~/asset/vendors/iCheck/skins/flat/green.css")%>" rel="stylesheet" />
+
+    <link href="<%#ResolveUrl("~/asset/css/progressBarModal.css")%>" rel="stylesheet" />
+
+
+    <!-- PNotify -->
+    <link href="<%#ResolveUrl("~/asset/vendors/pnotify/dist/pnotify.css")%>" rel="stylesheet" />
+    <link href="<%#ResolveUrl("~/asset/vendors/pnotify/dist/pnotify.buttons.css")%>" rel="stylesheet" />
+    <link href="<%#ResolveUrl("~/asset/vendors/pnotify/dist/pnotify.nonblock.css")%>" rel="stylesheet" />
+
+    <link href="<%#ResolveUrl("~/asset/css/pagination-ys.css")%>" rel="stylesheet" />
+
+    <link href="<%#ResolveUrl("~/asset/dist/css/select2.css")%>" rel="stylesheet" />
+
+    <link href="<%#ResolveUrl("~/asset/build/css/custom.min.css")%>" rel="stylesheet" />
+
+    <link href="<%#ResolveUrl("~/asset/css/Master.css")%>" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+</head>
+<body class="nav-sm">
+    <form runat="server" enctype="multipart/form-data" autocomplete="off">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True"></asp:ScriptManager>
+
+
+
+
+        <div class="container body">
+            <div class="main_container">
+                <div class="noPrint">
+                    <div class="col-md-3 left_col">
+                        <div class="left_col scroll-view">
+
+                            <div class="navbar nav_title" style="border: 0;">
+
+                                <a href="<%#ResolveUrl("~/Default.aspx")%>" class="site_title">
+                                    <asp:Image Width="48px" runat="server" ID="img_comp" />
+
+                                    <span>Chopin APP!</span></a>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <!-- menu profile quick info -->
+                            <div class="profile clearfix">
+                                <div class="profile_pic">
+                                    <asp:Image runat="server" ID="imgMenu" class="img-circle profile_img" />
+                                </div>
+                                <div class="profile_info">
+                                    <span>Bienvenido,</span>
+                                    <h2>
+                                        <asp:Label runat="server" ID="lbl_UserBienvenido"></asp:Label></h2>
+                                </div>
+                            </div>
+                            <!-- /menu profile quick info -->
+
+                            <br />
+
+                            <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <!-- menu -->
+                                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                                        <div class="menu_section">
+                                            <h3>General</h3>
+                                            <ul class="nav side-menu">
+                                                <li><a href='<%= ResolveUrl("~/Default.aspx") %>'><i class="fa fa-home"></i>Home </a></li>
+                                                <asp:Literal ID="lit_menu" runat="server"></asp:Literal>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--  menu -->
+                                </ContentTemplate>
+
+                            </asp:UpdatePanel>
+
+
+
+                        </div>
+                    </div>
+
+                    <!-- top navigation -->
+                    <div class="top_nav">
+                        <div class="nav_menu">
+                            <nav>
+                                <div class="nav toggle">
+                                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                                </div>
+
+
+                                <div style="float: right;">
+
+                                    <ul class="nav navbar-nav">
+
+
+                                        <!--Notificaciones -->
+
+                                        <li id="li_notif" role="presentation" class="dropdown">
+                                            <a href="javascrip;" id="div_Notif" runat="server" onclick="ActualizarNotificaciones();" class="dropdown-toggle info-number" data-toggle="dropdown">
+                                                <i class="fa fa-envelope-o"></i>
+                                                <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                                    <ContentTemplate>
+                                                        <asp:Literal ID="lit_CantNotif" runat="server"></asp:Literal>
+                                                    </ContentTemplate>
+                                                    <Triggers>
+                                                        <%--<asp:AsyncPostBackTrigger ControlID="tmr_Notificaciones" />--%>
+                                                        <asp:AsyncPostBackTrigger ControlID="btnActualizarNotif" />
+
+                                                    </Triggers>
+                                                </asp:UpdatePanel>
+
+
+                                            </a>
+                                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="height: 250px; overflow: auto;">
+                                                <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                                    <ContentTemplate>
+                                                        <asp:Literal ID="lit_Notificaciones" runat="server"></asp:Literal>
+                                                        <%--<asp:Timer runat="server" ID="tmr_Notificaciones" Interval="10000" OnTick="tmr_Notificaciones_Tick"></asp:Timer>--%>
+                                                        <asp:Button ID="btnActualizarNotif" ClientIDMode="Static" runat="server" Style="display: none" OnClick="btnActualizarNotif_Click" />
+                                                    </ContentTemplate>
+                                                    <Triggers>
+                                                        <%--<asp:AsyncPostBackTrigger ControlID="tmr_Notificaciones" />--%>
+                                                        <asp:AsyncPostBackTrigger ControlID="btnActualizarNotif" />
+                                                    </Triggers>
+                                                </asp:UpdatePanel>
+                                            </ul>
+                                        </li>
+
+                                        <!--fin notificaciones -->
+
+
+
+
+                                        <li class="">
+
+                                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                <asp:Image runat="server" ID="img_perfil" />
+                                                <asp:Label runat="server" ID="lbl_UserProfile"></asp:Label>
+
+                                                <span class=" fa fa-angle-down"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+
+                                                <li>
+
+                                                    <asp:LinkButton runat="server" ID="lkb_CerrarSesion" Text="<i class='fa fa-sign-out pull-right'></i>Cerrar sesión" OnClick="lkb_CerrarSesion_Click"></asp:LinkButton>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <div class="nav toggle" style="width: 300px; float: right;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-5">
+                                                <label class="input-xs">LOCALIDAD</label>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                                    <ContentTemplate>
+                                                        <asp:DropDownList runat="server" ID="ddl_localidadMaster" ClientIDMode="Static" Width="100%" AutoPostBack="true" OnSelectedIndexChanged="ddl_localidad_SelectedIndexChanged"></asp:DropDownList>
+                                                    </ContentTemplate>
+                                                    <Triggers>
+                                                        <asp:AsyncPostBackTrigger ControlID="ddl_localidadMaster" />
+                                                        <asp:AsyncPostBackTrigger ControlID="ddl_compania" />
+                                                    </Triggers>
+                                                </asp:UpdatePanel>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="nav toggle" style="width: 600px; float: right;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <label class="input-xs">COMPAÑIA</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                                    <ContentTemplate>
+                                                        <asp:DropDownList runat="server" ID="ddl_compania" Style="height: 22px;" ClientIDMode="Static" Width="100%" AutoPostBack="true" OnSelectedIndexChanged="ddl_compania_SelectedIndexChanged"></asp:DropDownList>
+                                                    </ContentTemplate>
+                                                    <Triggers>
+                                                        <asp:AsyncPostBackTrigger ControlID="ddl_compania" />
+                                                    </Triggers>
+                                                </asp:UpdatePanel>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- /top navigation -->
+
+                    <!-- page content -->
+
+
+                </div>
+
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <div class="noPrint">
+                    <div class="footer">
+
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <label>Ver.&nbsp;<b style="color:#008000;">1.0.1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                                    <%--<label>Ventanilla:&nbsp;<b style=<%= Session["ciVentanilla"].ToString()=="0"?"color:Red;":"color:#008000;" %>><%= Session["ciVentanilla"] %></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>--%>
+                                    SSI - Desarrollado por <a class="link" target="_blank" href="#">Chopin APP Ecuador</a>
+                                    <div class="clearfix"></div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- jQuery -->
+        <script src="<%: ResolveUrl("~/asset/vendors/jquery/dist/jquery.min.js")%>"></script>
+
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/bootstrap/dist/js/bootstrap.min.js")%>"></script>
+
+        <script src="<%: ResolveUrl("~/asset/dist/js/select2.js")%>"></script>
+        
+        <!-- FastClick -->
+        <script src="<%: ResolveUrl("~/asset/vendors/fastclick/lib/fastclick.js")%>"></script>
+        
+        <!-- JQueryPrint -->
+
+        <%--<script src="<%: ResolveUrl("~/asset/JQueryPrint/jQuery.print.js")%>"></script>--%>
+
+
+        <!-- PNotify -->
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/pnotify/dist/pnotify.js")%>"></script>
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/pnotify/dist/pnotify.buttons.js")%>"></script>
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/pnotify/dist/pnotify.nonblock.js")%>"></script>
+
+        <!-- iCheck y DateTimePicker -->
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/iCheck/icheck.js")%>"></script>
+
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/moment/min/moment.min.js")%>"></script>
+        <!-- fin iCheck -->
+
+        <!-- bootstrap-datetimepicker -->
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js")%>"></script>
+
+
+
+
+        <!--progress bar-->
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js")%>"></script>
+
+
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/jquery.hotkeys/jquery.hotkeys.js")%>"></script>
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js")%>"></script>
+        <script type="text/javascript" src="<%: ResolveUrl("~/asset/build/js/custom.js")%>"></script>
+
+
+
+
+
+        <script type="text/javascript">
+
+
+            function mostrarMensaje(titulo, mensaje, tipo, tiempo) {
+                if (tiempo != 0)
+                    tiempo = 5500;
+                new PNotify({
+                    title: titulo,
+                    text: mensaje,
+                    type: tipo,
+                    delay: tiempo,
+                    styling: 'bootstrap3'
+                });
+            }
+
+            function ActualizarNotificaciones() {
+                $("#btnActualizarNotif").click();
+            }
+
+
+
+
+
+        </script>
+
+
+        <asp:ContentPlaceHolder ID="FooterPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+</body>
+</html>
+
+

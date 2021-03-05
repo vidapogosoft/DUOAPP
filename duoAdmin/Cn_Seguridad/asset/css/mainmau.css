@@ -1,0 +1,177 @@
+﻿
+#portfolio .container-fluid, 
+#portfolio .col-sm-3  {
+  overflow: hidden;
+  padding: 0;
+}
+
+
+#portfolio .tblmau {
+        color: #333;
+        font-family: Helvetica, Arial, sans-serif;
+
+        border-collapse:
+        collapse;
+        border-spacing: 0; 
+    
+        border: 1px solid black;
+        width: 100%;
+    }
+
+#portfolio .tblmau, th {
+        background: #DFDFDF;  /* Darken header a bit */
+        font-weight: bold;	
+        height: 50px;
+        text-align: left;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+
+        border: 1px solid transparent; /* No more visible border */
+        transition: all 0.3s; 
+
+        
+    }
+
+#portfolio .tblmau, td {
+    
+        background: #FAFAFA;
+        text-align: center;
+        height: 50px;
+        vertical-align: bottom;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        border: 1px solid transparent; /* No more visible border */
+        transition: all 0.3s; 
+
+
+}
+
+#portfolio .tblmau, tr:nth-child(even) td { background: #F1F1F1; }  
+
+
+#portfolio .tblmau, tr:nth-child(odd) td { background: #FEFEFE; } 
+
+#portfolio .tblmau, tr td:hover { background: #666; color: black; } /* Hover cell effect! */
+
+
+
+
+
+
+#portfolio .folio-item {
+  position: relative;
+}
+
+#portfolio .overlay {
+  background-color: #000;
+  color: #fff; 
+  left: 0;
+  right:0;
+  bottom:-100%;
+  height: 0;
+  position: absolute;
+  text-align: center;
+  opacity:0;  
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay .overlay-content {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay .overlay-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.overlay .folio-info {
+  opacity: 0;
+  margin-bottom: 75px;
+  margin-top: -75px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.overlay .folio-info h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.folio-overview a {
+  font-size: 18px;
+  color: #333;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.folio-overview a:hover {
+  color: #fff;
+}
+
+.folio-overview .folio-expand {
+  margin-top: -500px;
+  margin-left: -500px;
+}
+
+.folio-image, .folio-overview .folio-expand {
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+#portfolio .folio-item:hover .folio-image {
+  -webkit-transform: scale(1.5) rotate(-15deg);
+  transform: scale(1.5) rotate(-15deg);
+}
+
+.folio-image img {
+  width: 100%;
+}
+
+#portfolio .folio-item:hover .overlay {
+  opacity: 0.8;
+  bottom: 0;
+  height: 100%;
+}
+
+#portfolio .folio-item:hover .folio-overview .folio-expand {
+  margin-top: 0;
+  margin-left:0;
+}
+
+#portfolio .folio-item:hover .overlay .folio-info {
+  opacity: 1;  
+  margin-bottom:0;
+  margin-top:0;
+}
+
+
+#single-portfolio {
+  padding: 90px 0;
+  background: #f5f5f5;
+  position: relative;
+}
+
+#single-portfolio img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#single-portfolio .close-folio-item {
+  position: absolute;
+  top: 30px;
+  font-size: 34px;
+  width: 34px;
+  height: 34px;
+  left: 50%;
+  color: #999;
+  margin-left: -17px;
+}

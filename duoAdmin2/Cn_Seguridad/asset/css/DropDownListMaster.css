@@ -1,0 +1,49 @@
+﻿.dropdownlist {
+    margin-bottom: 20px;
+}
+
+.input-xs {
+    height: 22px;
+    padding: 2px 5px;
+    font-size: 10px;
+    line-height: 1.5; 
+    border-radius: 3px;
+}
+
+.input-group-xs > .form-control,
+.input-group-xs > .input-group-addon,
+.input-group-xs > .input-group-btn > .btn {
+    height: 22px;
+    
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    min-height: 0px !important;
+    height: 22px !important;
+    border-radius: 0px !important;
+    border: 1px solid #ccc !important;
+}
+
+.select2-container {
+    height: 22px !important;
+}
+
+    .select2-container .select2-selection--single .select2-selection__rendered {
+        display: contents !important;
+        font-size: 10px !important;
+        height: 17px !important;
+        line-height: 12px !important;
+    }
+
+.select2-results__option {
+    font-size: 10px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 20px !important;
+}
+

@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBSCCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adcompania">
+          <Key>
+            <PropertyRef Name="ciCompania" />
+          </Key>
+          <Property Name="ciCompania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="txRUC" Type="varchar" MaxLength="15" />
+          <Property Name="txRazonSocial" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="txNombreComercial" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="txDireccionMatriz" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="txRutaLogo" Type="varchar" MaxLength="200" />
+          <Property Name="txTelefono" Type="varchar" MaxLength="12" />
+          <Property Name="txEmail" Type="varchar" MaxLength="50" />
+          <Property Name="txContraseniaMail" Type="varchar" MaxLength="25" />
+          <Property Name="ciPuertoMail" Type="int" />
+          <Property Name="SSLMail" Type="bit" />
+          <Property Name="HostMail" Type="varchar" MaxLength="100" />
+          <Property Name="txRutaPdf" Type="varchar" MaxLength="200" />
+          <Property Name="txRutaLogoCorreo" Type="varchar" MaxLength="200" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adcompanialocalidad">
+          <Key>
+            <PropertyRef Name="ciCompaniaLocalidad" />
+          </Key>
+          <Property Name="ciCompaniaLocalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciCompania" Type="int" Nullable="false" />
+          <Property Name="ciLocalidad" Type="int" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adlocalidades">
+          <Key>
+            <PropertyRef Name="ciLocalidad" />
+          </Key>
+          <Property Name="ciLocalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciCiudad" Type="int" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="txDescripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="txAbreviatura" Type="varchar" MaxLength="10" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="admenu">
+          <Key>
+            <PropertyRef Name="ciMenu" />
+          </Key>
+          <Property Name="ciMenu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciModulo" Type="int" Nullable="false" />
+          <Property Name="txFormulario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="txUrl" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ciOrden" Type="int" Nullable="false" />
+          <Property Name="ciEstado" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+          <Property Name="txUrlAcceso" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="admodulo">
+          <Key>
+            <PropertyRef Name="ciModulo" />
+          </Key>
+          <Property Name="ciModulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="txNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="txDescripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ciOrden" Type="int" Nullable="false" />
+          <Property Name="txIcono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adperfil">
+          <Key>
+            <PropertyRef Name="ciPerfil" />
+          </Key>
+          <Property Name="ciPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciCompania" Type="int" Nullable="false" />
+          <Property Name="txNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="txDescripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+          <Property Name="bdAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="adperfilmenu">
+          <Key>
+            <PropertyRef Name="ciPerfilmenu" />
+          </Key>
+          <Property Name="ciPerfilmenu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciMenu" Type="int" Nullable="false" />
+          <Property Name="ciPerfil" Type="int" Nullable="false" />
+          <Property Name="bdConsultar" Type="bit" />
+          <Property Name="bdGuardar" Type="bit" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adusuarioafiliado">
+          <Key>
+            <PropertyRef Name="ciUsuarioAfiliado" />
+          </Key>
+          <Property Name="ciUsuarioAfiliado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciUsuario" Type="varchar" MaxLength="25" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="FechaIngreso" Type="datetime" />
+          <Property Name="UsuarioIngreso" Type="varchar" MaxLength="25" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="adusuariolocalidad">
+          <Key>
+            <PropertyRef Name="ciUsuarioLocalidad" />
+          </Key>
+          <Property Name="ciUsuarioLocalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciCompania" Type="int" Nullable="false" />
+          <Property Name="ciUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ciLocalidad" Type="int" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adusuarionotificacion">
+          <Key>
+            <PropertyRef Name="ciUsuarioNotificacion" />
+          </Key>
+          <Property Name="ciUsuarioNotificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciCompania" Type="int" Nullable="false" />
+          <Property Name="ciUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="txMensaje" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="bdNotificadoPopUp" Type="bit" Nullable="false" />
+          <Property Name="bdLeido" Type="bit" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adusuarioperfil">
+          <Key>
+            <PropertyRef Name="ciPerfilUsuario" />
+          </Key>
+          <Property Name="ciPerfilUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciPerfil" Type="int" Nullable="false" />
+          <Property Name="ciUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ciCompania" Type="int" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adusuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="idPersona" Type="int" />
+          <Property Name="txNombreCorto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="txDescripcion" Type="varchar" MaxLength="200" />
+          <Property Name="txClave" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="bdMaster" Type="bit" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" />
+          <Property Name="fcIngreso" Type="datetime" Nullable="false" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+          <Property Name="txDirectorioImagen" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="adusuarioscompania">
+          <Key>
+            <PropertyRef Name="ciUsuarioCompania" />
+          </Key>
+          <Property Name="ciUsuarioCompania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciCompania" Type="int" Nullable="false" />
+          <Property Name="ciUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" />
+          <Property Name="fcUsuarioIngreso" Type="datetime" />
+          <Property Name="ciUsuarioModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Anuncio">
+          <Key>
+            <PropertyRef Name="RegAnuncioId" />
+          </Key>
+          <Property Name="RegAnuncioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegId" Type="int" />
+          <Property Name="RegCodigoUnico" Type="varchar(max)" />
+          <Property Name="RegAnuncioPalabraClave" Type="varchar" MaxLength="10" />
+          <Property Name="RegAnuncioAcercaDe" Type="varchar(max)" />
+          <Property Name="RegAnuncioEstado" Type="varchar" MaxLength="20" />
+          <Property Name="RegAnuncioFecha" Type="datetime" />
+          <Property Name="AnioAnuncioReg" Type="int" />
+          <Property Name="MesAnuncioReg" Type="int" />
+          <Property Name="DiaAnuncioReg" Type="int" />
+          <Property Name="AnioAnuncioHastaId" Type="int" />
+          <Property Name="MesAnuncioHastaId" Type="int" />
+          <Property Name="DiaAnuncioHastaId" Type="int" />
+          <Property Name="RegRutaImagen1" Type="varchar(max)" />
+          <Property Name="RegRutaImagen2" Type="varchar(max)" />
+          <Property Name="RegRutaImagen3" Type="varchar(max)" />
+          <Property Name="Titulo" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="AnuncioImages">
+          <Key>
+            <PropertyRef Name="RegAnuncioImagenId" />
+          </Key>
+          <Property Name="RegAnuncioImagenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegAnuncioId" Type="int" />
+          <Property Name="RegId" Type="int" />
+          <Property Name="RegRutaImagen" Type="varchar(max)" />
+          <Property Name="RegAnuncioEstado" Type="varchar" MaxLength="20" />
+          <Property Name="RegAnuncioFecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PerfilDuo">
+          <Key>
+            <PropertyRef Name="RegPerfilId" />
+          </Key>
+          <Property Name="RegPerfilId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegId" Type="int" />
+          <Property Name="RegCodigoUnico" Type="varchar(max)" />
+          <Property Name="RegRutaImagen" Type="varchar(max)" />
+          <Property Name="RegStreamImagen" Type="image" />
+          <Property Name="RegNombres" Type="varchar(max)" />
+          <Property Name="RegApellidos" Type="varchar(max)" />
+          <Property Name="RegNombresCompletos" Type="varchar(max)" />
+          <Property Name="RegProfesion" Type="varchar(max)" />
+          <Property Name="RegAcercaDe" Type="varchar(max)" />
+          <Property Name="RegEmail" Type="varchar(max)" />
+          <Property Name="RegNumeroCelular" Type="varchar(max)" />
+          <Property Name="RegFecha" Type="datetime" />
+          <Property Name="AnioReg" Type="int" />
+          <Property Name="MesReg" Type="int" />
+          <Property Name="DiaReg" Type="int" />
+          <Property Name="Tecnologia" Type="bit" />
+          <Property Name="Legales" Type="bit" />
+          <Property Name="Comunicacion" Type="bit" />
+          <Property Name="Comercio" Type="bit" />
+          <Property Name="ArteDiseno" Type="bit" />
+          <Property Name="ServiciosTecnicos" Type="bit" />
+          <Property Name="Urbanismo" Type="bit" />
+          <Property Name="Emprendimientos" Type="bit" />
+        </EntityType>
+        <EntityType Name="persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Name="IdPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="20" />
+          <Property Name="TipoIdentificacion" Type="int" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="700" />
+          <Property Name="Nombres" Type="varchar" MaxLength="350" />
+          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="100" />
+          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="100" />
+          <Property Name="NombresCompletos" Type="varchar" MaxLength="1000" />
+          <Property Name="fcNacimiento" Type="datetime" />
+          <Property Name="cianios" Type="int" />
+          <Property Name="fcIngreso" Type="datetime" />
+          <Property Name="ciUsuarioIngreso" Type="varchar" MaxLength="20" />
+          <Property Name="fcModificacion" Type="datetime" />
+          <Property Name="ciUsuarioModifica" Type="varchar" MaxLength="20" />
+          <Property Name="ciEstado" Type="varchar" MaxLength="1" />
+          <Property Name="ciLocalidad" Type="int" />
+          <Property Name="txDireccion" Type="varchar" MaxLength="255" />
+          <Property Name="txTelefono" Type="varchar" MaxLength="20" />
+          <Property Name="txCodConadis" Type="varchar" MaxLength="10" />
+          <Property Name="txCorreoElectronico" Type="varchar" MaxLength="50" />
+          <Property Name="ciTipoPersona" Type="int" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="RegProductId" />
+          </Key>
+          <Property Name="RegProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegPerfilId" Type="int" />
+          <Property Name="RegId" Type="int" />
+          <Property Name="RegCodigoUnico" Type="varchar(max)" />
+          <Property Name="RegRutaImagen" Type="varchar(max)" />
+          <Property Name="RegStreamImagen" Type="image" />
+          <Property Name="RegTituloProducto" Type="varchar(max)" />
+          <Property Name="RegDescripcionProducto" Type="varchar(max)" />
+          <Property Name="RegPreciProducto" Type="varchar(max)" />
+          <Property Name="RegFecha" Type="datetime" />
+          <Property Name="AnioReg" Type="int" />
+          <Property Name="MesReg" Type="int" />
+          <Property Name="DiaReg" Type="int" />
+          <Property Name="IsNew" Type="int" />
+        </EntityType>
+        <EntityType Name="Registrado">
+          <Key>
+            <PropertyRef Name="RegId" />
+          </Key>
+          <Property Name="RegId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegCodigoUnico" Type="varchar(max)" />
+          <Property Name="RegNombres" Type="varchar(max)" />
+          <Property Name="RegApellidos" Type="varchar(max)" />
+          <Property Name="RegNombreCompleto" Type="varchar(max)" />
+          <Property Name="RegContrasenia" Type="varchar(max)" />
+          <Property Name="RegEmail" Type="varchar(max)" />
+          <Property Name="RegNumeroCelular" Type="varchar(max)" />
+          <Property Name="RegFecha" Type="datetime" />
+          <Property Name="AnioReg" Type="int" />
+          <Property Name="MesReg" Type="int" />
+          <Property Name="DiaReg" Type="int" />
+          <Property Name="Tecnologia" Type="bit" />
+          <Property Name="Legales" Type="bit" />
+          <Property Name="Comunicacion" Type="bit" />
+          <Property Name="Comercio" Type="bit" />
+          <Property Name="ArteDiseno" Type="bit" />
+          <Property Name="ServiciosTecnicos" Type="bit" />
+          <Property Name="Urbanismo" Type="bit" />
+          <Property Name="Emprendimientos" Type="bit" />
+        </EntityType>
+        <EntityType Name="works">
+          <Key>
+            <PropertyRef Name="RegWorksId" />
+          </Key>
+          <Property Name="RegWorksId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegPerfilId" Type="int" />
+          <Property Name="RegId" Type="int" />
+          <Property Name="RegCodigoUnico" Type="varchar(max)" />
+          <Property Name="RegRutaImagen" Type="varchar(max)" />
+          <Property Name="RegStreamImagen" Type="image" />
+          <Property Name="RegDescripcion" Type="varchar(max)" />
+          <Property Name="RegFecha" Type="datetime" />
+          <Property Name="AnioReg" Type="int" />
+          <Property Name="MesReg" Type="int" />
+          <Property Name="DiaReg" Type="int" />
+          <Property Name="IsNew" Type="int" />
+        </EntityType>
+        <EntityContainer Name="DBSCCModelStoreContainer">
+          <EntitySet Name="adcompania" EntityType="Self.adcompania" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adcompanialocalidad" EntityType="Self.adcompanialocalidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adlocalidades" EntityType="Self.adlocalidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="admenu" EntityType="Self.admenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="admodulo" EntityType="Self.admodulo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adperfil" EntityType="Self.adperfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adperfilmenu" EntityType="Self.adperfilmenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adusuarioafiliado" EntityType="Self.adusuarioafiliado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adusuariolocalidad" EntityType="Self.adusuariolocalidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adusuarionotificacion" EntityType="Self.adusuarionotificacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adusuarioperfil" EntityType="Self.adusuarioperfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adusuarios" EntityType="Self.adusuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adusuarioscompania" EntityType="Self.adusuarioscompania" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Anuncio" EntityType="Self.Anuncio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnuncioImages" EntityType="Self.AnuncioImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PerfilDuo" EntityType="Self.PerfilDuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registrado" EntityType="Self.Registrado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="works" EntityType="Self.works" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBSCCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adcompania">
+          <Key>
+            <PropertyRef Name="ciCompania" />
+          </Key>
+          <Property Name="ciCompania" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="txRUC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="txRazonSocial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="txNombreComercial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="txDireccionMatriz" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ciEstado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="txRutaLogo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="txTelefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="txEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txContraseniaMail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ciPuertoMail" Type="Int32" />
+          <Property Name="SSLMail" Type="Boolean" />
+          <Property Name="HostMail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="txRutaPdf" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="txRutaLogoCorreo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="EncuestaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adcompania" EntityType="Self.adcompania" />
+          <EntitySet Name="adlocalidades" EntityType="DBSCCModel.adlocalidades" />
+          <EntitySet Name="adusuarionotificacion" EntityType="DBSCCModel.adusuarionotificacion" />
+          <EntitySet Name="adusuarios" EntityType="DBSCCModel.adusuarios" />
+          <EntitySet Name="adcompanialocalidad" EntityType="DBSCCModel.adcompanialocalidad" />
+          <EntitySet Name="adusuariolocalidad" EntityType="DBSCCModel.adusuariolocalidad" />
+          <EntitySet Name="adusuarioscompania" EntityType="DBSCCModel.adusuarioscompania" />
+          <EntitySet Name="adperfil" EntityType="DBSCCModel.adperfil" />
+          <EntitySet Name="adperfilmenu" EntityType="DBSCCModel.adperfilmenu" />
+          <EntitySet Name="adusuarioperfil" EntityType="DBSCCModel.adusuarioperfil" />
+          <EntitySet Name="admenu" EntityType="DBSCCModel.admenu" />
+          <EntitySet Name="admodulo" EntityType="DBSCCModel.admodulo" />
+          <FunctionImport Name="spObtenerSolicitudAdmin" ReturnType="Collection(DBSCCModel.spObtenerSolicitudAdmin_Result)" />
+          <FunctionImport Name="spObtenerSolicitudGeneral" ReturnType="Collection(DBSCCModel.spObtenerSolicitudGeneral_Result)">
+          <Parameter Name="usuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="adusuarioafiliado" EntityType="DBSCCModel.adusuarioafiliado" />
+          <EntitySet Name="PerfilDuo" EntityType="DBSCCModel.PerfilDuo" />
+          <EntitySet Name="Registrado" EntityType="DBSCCModel.Registrado" />
+          <EntitySet Name="persona" EntityType="DBSCCModel.persona" />
+          <EntitySet Name="AnuncioImages" EntityType="DBSCCModel.AnuncioImages" />
+          <EntitySet Name="Anuncio" EntityType="DBSCCModel.Anuncio" />
+          <EntitySet Name="Products" EntityType="DBSCCModel.Products" />
+          <EntitySet Name="works" EntityType="DBSCCModel.works" />
+          </EntityContainer>
+        <EntityType Name="adlocalidades">
+          <Key>
+            <PropertyRef Name="ciLocalidad" />
+          </Key>
+          <Property Name="ciLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciCiudad" Type="Int32" Nullable="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="txDescripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txAbreviatura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="adusuarionotificacion">
+          <Key>
+            <PropertyRef Name="ciUsuarioNotificacion" />
+          </Key>
+          <Property Name="ciUsuarioNotificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciCompania" Type="Int32" Nullable="false" />
+          <Property Name="ciUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="txMensaje" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="bdNotificadoPopUp" Type="Boolean" Nullable="false" />
+          <Property Name="bdLeido" Type="Boolean" Nullable="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="adusuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="idPersona" Type="Int32" />
+          <Property Name="txNombreCorto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txDescripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="txClave" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="bdMaster" Type="Boolean" />
+          <Property Name="ciUsuarioIngreso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+          <Property Name="txDirectorioImagen" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="adcompanialocalidad">
+          <Key>
+            <PropertyRef Name="ciCompaniaLocalidad" />
+          </Key>
+          <Property Name="ciCompaniaLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciCompania" Type="Int32" Nullable="false" />
+          <Property Name="ciLocalidad" Type="Int32" Nullable="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="adusuariolocalidad">
+          <Key>
+            <PropertyRef Name="ciUsuarioLocalidad" />
+          </Key>
+          <Property Name="ciUsuarioLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciCompania" Type="Int32" Nullable="false" />
+          <Property Name="ciUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ciLocalidad" Type="Int32" Nullable="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="adusuarioscompania">
+          <Key>
+            <PropertyRef Name="ciUsuarioCompania" />
+          </Key>
+          <Property Name="ciUsuarioCompania" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciCompania" Type="Int32" Nullable="false" />
+          <Property Name="ciUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ciEstado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcUsuarioIngreso" Type="DateTime" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="adperfil">
+          <Key>
+            <PropertyRef Name="ciPerfil" />
+          </Key>
+          <Property Name="ciPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciCompania" Type="Int32" Nullable="false" />
+          <Property Name="txNombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txDescripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+          <Property Name="bdAdmin" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="adperfilmenu">
+          <Key>
+            <PropertyRef Name="ciPerfilmenu" />
+          </Key>
+          <Property Name="ciPerfilmenu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciMenu" Type="Int32" Nullable="false" />
+          <Property Name="ciPerfil" Type="Int32" Nullable="false" />
+          <Property Name="bdConsultar" Type="Boolean" />
+          <Property Name="bdGuardar" Type="Boolean" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="adusuarioperfil">
+          <Key>
+            <PropertyRef Name="ciPerfilUsuario" />
+          </Key>
+          <Property Name="ciPerfilUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciPerfil" Type="Int32" Nullable="false" />
+          <Property Name="ciUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ciCompania" Type="Int32" Nullable="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="admenu">
+          <Key>
+            <PropertyRef Name="ciMenu" />
+          </Key>
+          <Property Name="ciMenu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciModulo" Type="Int32" Nullable="false" />
+          <Property Name="txFormulario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txUrl" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ciOrden" Type="Int32" Nullable="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+          <Property Name="txUrlAcceso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="admodulo">
+          <Key>
+            <PropertyRef Name="ciModulo" />
+          </Key>
+          <Property Name="ciModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="txNombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txDescripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ciOrden" Type="Int32" Nullable="false" />
+          <Property Name="txIcono" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ciEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciUsuarioIngreso" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ciUsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <ComplexType Name="spObtenerSolicitudAdmin_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="SolicitanteId" Nullable="false" />
+          <Property Type="String" Name="Solicitante" Nullable="false" MaxLength="201" />
+          <Property Type="DateTime" Name="FechaSolicitud" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="EstadoSolicitudTablaId" Nullable="false" />
+          <Property Type="String" Name="EstadoSolicitudCodigo" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="EstadoSolicitudNombre" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="OrganizacionEmpresaId" Nullable="true" />
+          <Property Type="String" Name="OrganizacionEmpresaNombre" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="MotivoTablaId" Nullable="true" />
+          <Property Type="String" Name="MotivoCodigo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MotivoNombre" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="EsUrgente" Nullable="true" />
+          <Property Type="String" Name="DocumentoReferenciaNombre" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DocumentoReferenciaUrl" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Observaciones" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="RegistroActivo" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="EstacionCreacion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="EstacionModificacion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="UsuarioAnulacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaAnulacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="EstacionAnulacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaEnvioSolicitud" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="spObtenerSolicitudGeneral_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="SolicitanteId" Nullable="false" />
+          <Property Type="String" Name="Solicitante" Nullable="false" MaxLength="201" />
+          <Property Type="DateTime" Name="FechaSolicitud" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="EstadoSolicitudTablaId" Nullable="false" />
+          <Property Type="String" Name="EstadoSolicitudCodigo" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="EstadoSolicitudNombre" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="OrganizacionEmpresaId" Nullable="true" />
+          <Property Type="String" Name="OrganizacionEmpresaNombre" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="MotivoTablaId" Nullable="true" />
+          <Property Type="String" Name="MotivoCodigo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MotivoNombre" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="EsUrgente" Nullable="true" />
+          <Property Type="String" Name="DocumentoReferenciaNombre" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DocumentoReferenciaUrl" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Observaciones" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="RegistroActivo" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="EstacionCreacion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="EstacionModificacion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="UsuarioAnulacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaAnulacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="EstacionAnulacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FechaEnvioSolicitud" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="adusuarioafiliado">
+          <Key>
+            <PropertyRef Name="ciUsuarioAfiliado" />
+          </Key>
+          <Property Name="ciUsuarioAfiliado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioIngreso" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PerfilDuo">
+          <Key>
+            <PropertyRef Name="RegPerfilId" />
+          </Key>
+          <Property Name="RegPerfilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegId" Type="Int32" />
+          <Property Name="RegCodigoUnico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegRutaImagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegStreamImagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RegNombres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegApellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegNombresCompletos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegProfesion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegAcercaDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegNumeroCelular" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegFecha" Type="DateTime" Precision="3" />
+          <Property Name="AnioReg" Type="Int32" />
+          <Property Name="MesReg" Type="Int32" />
+          <Property Name="DiaReg" Type="Int32" />
+          <Property Name="Tecnologia" Type="Boolean" />
+          <Property Name="Legales" Type="Boolean" />
+          <Property Name="Comunicacion" Type="Boolean" />
+          <Property Name="Comercio" Type="Boolean" />
+          <Property Name="ArteDiseno" Type="Boolean" />
+          <Property Name="ServiciosTecnicos" Type="Boolean" />
+          <Property Name="Urbanismo" Type="Boolean" />
+          <Property Name="Emprendimientos" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Registrado">
+          <Key>
+            <PropertyRef Name="RegId" />
+          </Key>
+          <Property Name="RegId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegCodigoUnico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegNombres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegApellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegNombreCompleto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegContrasenia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegNumeroCelular" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegFecha" Type="DateTime" Precision="3" />
+          <Property Name="AnioReg" Type="Int32" />
+          <Property Name="MesReg" Type="Int32" />
+          <Property Name="DiaReg" Type="Int32" />
+          <Property Name="Tecnologia" Type="Boolean" />
+          <Property Name="Legales" Type="Boolean" />
+          <Property Name="Comunicacion" Type="Boolean" />
+          <Property Name="Comercio" Type="Boolean" />
+          <Property Name="ArteDiseno" Type="Boolean" />
+          <Property Name="ServiciosTecnicos" Type="Boolean" />
+          <Property Name="Urbanismo" Type="Boolean" />
+          <Property Name="Emprendimientos" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Name="IdPersona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Identificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TipoIdentificacion" Type="Int32" />
+          <Property Name="RazonSocial" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="Nombres" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NombresCompletos" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="fcNacimiento" Type="DateTime" Precision="3" />
+          <Property Name="cianios" Type="Int32" />
+          <Property Name="fcIngreso" Type="DateTime" Precision="3" />
+          <Property Name="ciUsuarioIngreso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fcModificacion" Type="DateTime" Precision="3" />
+          <Property Name="ciUsuarioModifica" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ciEstado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ciLocalidad" Type="Int32" />
+          <Property Name="txDireccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="txTelefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="txCodConadis" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="txCorreoElectronico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ciTipoPersona" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AnuncioImages">
+          <Key>
+            <PropertyRef Name="RegAnuncioImagenId" />
+          </Key>
+          <Property Name="RegAnuncioImagenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegAnuncioId" Type="Int32" />
+          <Property Name="RegId" Type="Int32" />
+          <Property Name="RegRutaImagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegAnuncioEstado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RegAnuncioFecha" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Anuncio">
+          <Key>
+            <PropertyRef Name="RegAnuncioId" />
+          </Key>
+          <Property Name="RegAnuncioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegId" Type="Int32" />
+          <Property Name="RegCodigoUnico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegAnuncioPalabraClave" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RegAnuncioAcercaDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegAnuncioEstado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RegAnuncioFecha" Type="DateTime" Precision="3" />
+          <Property Name="AnioAnuncioReg" Type="Int32" />
+          <Property Name="MesAnuncioReg" Type="Int32" />
+          <Property Name="DiaAnuncioReg" Type="Int32" />
+          <Property Name="AnioAnuncioHastaId" Type="Int32" />
+          <Property Name="MesAnuncioHastaId" Type="Int32" />
+          <Property Name="DiaAnuncioHastaId" Type="Int32" />
+          <Property Name="RegRutaImagen1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegRutaImagen2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegRutaImagen3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="RegProductId" />
+          </Key>
+          <Property Name="RegProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegPerfilId" Type="Int32" />
+          <Property Name="RegId" Type="Int32" />
+          <Property Name="RegCodigoUnico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegRutaImagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegStreamImagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RegTituloProducto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegDescripcionProducto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegPreciProducto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegFecha" Type="DateTime" Precision="3" />
+          <Property Name="AnioReg" Type="Int32" />
+          <Property Name="MesReg" Type="Int32" />
+          <Property Name="DiaReg" Type="Int32" />
+          <Property Name="IsNew" Type="Int32" />
+        </EntityType>
+        <EntityType Name="works">
+          <Key>
+            <PropertyRef Name="RegWorksId" />
+          </Key>
+          <Property Name="RegWorksId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegPerfilId" Type="Int32" />
+          <Property Name="RegId" Type="Int32" />
+          <Property Name="RegCodigoUnico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegRutaImagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegStreamImagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RegDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegFecha" Type="DateTime" Precision="3" />
+          <Property Name="AnioReg" Type="Int32" />
+          <Property Name="MesReg" Type="Int32" />
+          <Property Name="DiaReg" Type="Int32" />
+          <Property Name="IsNew" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBSCCModelStoreContainer" CdmEntityContainer="EncuestaEntities">
+          <EntitySetMapping Name="adcompania">
+            <EntityTypeMapping TypeName="DBSCCModel.adcompania">
+              <MappingFragment StoreEntitySet="adcompania">
+                <ScalarProperty Name="ciCompania" ColumnName="ciCompania" />
+                <ScalarProperty Name="txRUC" ColumnName="txRUC" />
+                <ScalarProperty Name="txRazonSocial" ColumnName="txRazonSocial" />
+                <ScalarProperty Name="txNombreComercial" ColumnName="txNombreComercial" />
+                <ScalarProperty Name="txDireccionMatriz" ColumnName="txDireccionMatriz" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="txRutaLogo" ColumnName="txRutaLogo" />
+                <ScalarProperty Name="txTelefono" ColumnName="txTelefono" />
+                <ScalarProperty Name="txEmail" ColumnName="txEmail" />
+                <ScalarProperty Name="txContraseniaMail" ColumnName="txContraseniaMail" />
+                <ScalarProperty Name="ciPuertoMail" ColumnName="ciPuertoMail" />
+                <ScalarProperty Name="SSLMail" ColumnName="SSLMail" />
+                <ScalarProperty Name="HostMail" ColumnName="HostMail" />
+                <ScalarProperty Name="txRutaPdf" ColumnName="txRutaPdf" />
+                <ScalarProperty Name="txRutaLogoCorreo" ColumnName="txRutaLogoCorreo" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adlocalidades">
+            <EntityTypeMapping TypeName="DBSCCModel.adlocalidades">
+              <MappingFragment StoreEntitySet="adlocalidades">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="txAbreviatura" ColumnName="txAbreviatura" />
+                <ScalarProperty Name="txDescripcion" ColumnName="txDescripcion" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciCiudad" ColumnName="ciCiudad" />
+                <ScalarProperty Name="ciLocalidad" ColumnName="ciLocalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adusuarionotificacion">
+            <EntityTypeMapping TypeName="DBSCCModel.adusuarionotificacion">
+              <MappingFragment StoreEntitySet="adusuarionotificacion">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="bdLeido" ColumnName="bdLeido" />
+                <ScalarProperty Name="bdNotificadoPopUp" ColumnName="bdNotificadoPopUp" />
+                <ScalarProperty Name="txMensaje" ColumnName="txMensaje" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciUsuario" ColumnName="ciUsuario" />
+                <ScalarProperty Name="ciCompania" ColumnName="ciCompania" />
+                <ScalarProperty Name="ciUsuarioNotificacion" ColumnName="ciUsuarioNotificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adusuarios">
+            <EntityTypeMapping TypeName="DBSCCModel.adusuarios">
+              <MappingFragment StoreEntitySet="adusuarios">
+                <ScalarProperty Name="txDirectorioImagen" ColumnName="txDirectorioImagen" />
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="bdMaster" ColumnName="bdMaster" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="txClave" ColumnName="txClave" />
+                <ScalarProperty Name="txDescripcion" ColumnName="txDescripcion" />
+                <ScalarProperty Name="txNombreCorto" ColumnName="txNombreCorto" />
+                <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+                <ScalarProperty Name="ciUsuario" ColumnName="ciUsuario" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adcompanialocalidad">
+            <EntityTypeMapping TypeName="DBSCCModel.adcompanialocalidad">
+              <MappingFragment StoreEntitySet="adcompanialocalidad">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciLocalidad" ColumnName="ciLocalidad" />
+                <ScalarProperty Name="ciCompania" ColumnName="ciCompania" />
+                <ScalarProperty Name="ciCompaniaLocalidad" ColumnName="ciCompaniaLocalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adusuariolocalidad">
+            <EntityTypeMapping TypeName="DBSCCModel.adusuariolocalidad">
+              <MappingFragment StoreEntitySet="adusuariolocalidad">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciLocalidad" ColumnName="ciLocalidad" />
+                <ScalarProperty Name="ciUsuario" ColumnName="ciUsuario" />
+                <ScalarProperty Name="ciCompania" ColumnName="ciCompania" />
+                <ScalarProperty Name="ciUsuarioLocalidad" ColumnName="ciUsuarioLocalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adusuarioscompania">
+            <EntityTypeMapping TypeName="DBSCCModel.adusuarioscompania">
+              <MappingFragment StoreEntitySet="adusuarioscompania">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcUsuarioIngreso" ColumnName="fcUsuarioIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciUsuario" ColumnName="ciUsuario" />
+                <ScalarProperty Name="ciCompania" ColumnName="ciCompania" />
+                <ScalarProperty Name="ciUsuarioCompania" ColumnName="ciUsuarioCompania" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adperfil">
+            <EntityTypeMapping TypeName="DBSCCModel.adperfil">
+              <MappingFragment StoreEntitySet="adperfil">
+                <ScalarProperty Name="bdAdmin" ColumnName="bdAdmin" />
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="txDescripcion" ColumnName="txDescripcion" />
+                <ScalarProperty Name="txNombre" ColumnName="txNombre" />
+                <ScalarProperty Name="ciCompania" ColumnName="ciCompania" />
+                <ScalarProperty Name="ciPerfil" ColumnName="ciPerfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adperfilmenu">
+            <EntityTypeMapping TypeName="DBSCCModel.adperfilmenu">
+              <MappingFragment StoreEntitySet="adperfilmenu">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="bdGuardar" ColumnName="bdGuardar" />
+                <ScalarProperty Name="bdConsultar" ColumnName="bdConsultar" />
+                <ScalarProperty Name="ciPerfil" ColumnName="ciPerfil" />
+                <ScalarProperty Name="ciMenu" ColumnName="ciMenu" />
+                <ScalarProperty Name="ciPerfilmenu" ColumnName="ciPerfilmenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adusuarioperfil">
+            <EntityTypeMapping TypeName="DBSCCModel.adusuarioperfil">
+              <MappingFragment StoreEntitySet="adusuarioperfil">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciCompania" ColumnName="ciCompania" />
+                <ScalarProperty Name="ciUsuario" ColumnName="ciUsuario" />
+                <ScalarProperty Name="ciPerfil" ColumnName="ciPerfil" />
+                <ScalarProperty Name="ciPerfilUsuario" ColumnName="ciPerfilUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admenu">
+            <EntityTypeMapping TypeName="DBSCCModel.admenu">
+              <MappingFragment StoreEntitySet="admenu">
+                <ScalarProperty Name="txUrlAcceso" ColumnName="txUrlAcceso" />
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciOrden" ColumnName="ciOrden" />
+                <ScalarProperty Name="txUrl" ColumnName="txUrl" />
+                <ScalarProperty Name="txFormulario" ColumnName="txFormulario" />
+                <ScalarProperty Name="ciModulo" ColumnName="ciModulo" />
+                <ScalarProperty Name="ciMenu" ColumnName="ciMenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admodulo">
+            <EntityTypeMapping TypeName="DBSCCModel.admodulo">
+              <MappingFragment StoreEntitySet="admodulo">
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioModificacion" ColumnName="ciUsuarioModificacion" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="txIcono" ColumnName="txIcono" />
+                <ScalarProperty Name="ciOrden" ColumnName="ciOrden" />
+                <ScalarProperty Name="txDescripcion" ColumnName="txDescripcion" />
+                <ScalarProperty Name="txNombre" ColumnName="txNombre" />
+                <ScalarProperty Name="ciModulo" ColumnName="ciModulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adusuarioafiliado">
+            <EntityTypeMapping TypeName="DBSCCModel.adusuarioafiliado">
+              <MappingFragment StoreEntitySet="adusuarioafiliado">
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="UsuarioIngreso" ColumnName="UsuarioIngreso" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+                <ScalarProperty Name="ciUsuario" ColumnName="ciUsuario" />
+                <ScalarProperty Name="ciUsuarioAfiliado" ColumnName="ciUsuarioAfiliado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PerfilDuo">
+            <EntityTypeMapping TypeName="DBSCCModel.PerfilDuo">
+              <MappingFragment StoreEntitySet="PerfilDuo">
+                <ScalarProperty Name="Emprendimientos" ColumnName="Emprendimientos" />
+                <ScalarProperty Name="Urbanismo" ColumnName="Urbanismo" />
+                <ScalarProperty Name="ServiciosTecnicos" ColumnName="ServiciosTecnicos" />
+                <ScalarProperty Name="ArteDiseno" ColumnName="ArteDiseno" />
+                <ScalarProperty Name="Comercio" ColumnName="Comercio" />
+                <ScalarProperty Name="Comunicacion" ColumnName="Comunicacion" />
+                <ScalarProperty Name="Legales" ColumnName="Legales" />
+                <ScalarProperty Name="Tecnologia" ColumnName="Tecnologia" />
+                <ScalarProperty Name="DiaReg" ColumnName="DiaReg" />
+                <ScalarProperty Name="MesReg" ColumnName="MesReg" />
+                <ScalarProperty Name="AnioReg" ColumnName="AnioReg" />
+                <ScalarProperty Name="RegFecha" ColumnName="RegFecha" />
+                <ScalarProperty Name="RegNumeroCelular" ColumnName="RegNumeroCelular" />
+                <ScalarProperty Name="RegEmail" ColumnName="RegEmail" />
+                <ScalarProperty Name="RegAcercaDe" ColumnName="RegAcercaDe" />
+                <ScalarProperty Name="RegProfesion" ColumnName="RegProfesion" />
+                <ScalarProperty Name="RegNombresCompletos" ColumnName="RegNombresCompletos" />
+                <ScalarProperty Name="RegApellidos" ColumnName="RegApellidos" />
+                <ScalarProperty Name="RegNombres" ColumnName="RegNombres" />
+                <ScalarProperty Name="RegStreamImagen" ColumnName="RegStreamImagen" />
+                <ScalarProperty Name="RegRutaImagen" ColumnName="RegRutaImagen" />
+                <ScalarProperty Name="RegCodigoUnico" ColumnName="RegCodigoUnico" />
+                <ScalarProperty Name="RegId" ColumnName="RegId" />
+                <ScalarProperty Name="RegPerfilId" ColumnName="RegPerfilId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrado">
+            <EntityTypeMapping TypeName="DBSCCModel.Registrado">
+              <MappingFragment StoreEntitySet="Registrado">
+                <ScalarProperty Name="Emprendimientos" ColumnName="Emprendimientos" />
+                <ScalarProperty Name="Urbanismo" ColumnName="Urbanismo" />
+                <ScalarProperty Name="ServiciosTecnicos" ColumnName="ServiciosTecnicos" />
+                <ScalarProperty Name="ArteDiseno" ColumnName="ArteDiseno" />
+                <ScalarProperty Name="Comercio" ColumnName="Comercio" />
+                <ScalarProperty Name="Comunicacion" ColumnName="Comunicacion" />
+                <ScalarProperty Name="Legales" ColumnName="Legales" />
+                <ScalarProperty Name="Tecnologia" ColumnName="Tecnologia" />
+                <ScalarProperty Name="DiaReg" ColumnName="DiaReg" />
+                <ScalarProperty Name="MesReg" ColumnName="MesReg" />
+                <ScalarProperty Name="AnioReg" ColumnName="AnioReg" />
+                <ScalarProperty Name="RegFecha" ColumnName="RegFecha" />
+                <ScalarProperty Name="RegNumeroCelular" ColumnName="RegNumeroCelular" />
+                <ScalarProperty Name="RegEmail" ColumnName="RegEmail" />
+                <ScalarProperty Name="RegContrasenia" ColumnName="RegContrasenia" />
+                <ScalarProperty Name="RegNombreCompleto" ColumnName="RegNombreCompleto" />
+                <ScalarProperty Name="RegApellidos" ColumnName="RegApellidos" />
+                <ScalarProperty Name="RegNombres" ColumnName="RegNombres" />
+                <ScalarProperty Name="RegCodigoUnico" ColumnName="RegCodigoUnico" />
+                <ScalarProperty Name="RegId" ColumnName="RegId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="persona">
+            <EntityTypeMapping TypeName="DBSCCModel.persona">
+              <MappingFragment StoreEntitySet="persona">
+                <ScalarProperty Name="ciTipoPersona" ColumnName="ciTipoPersona" />
+                <ScalarProperty Name="txCorreoElectronico" ColumnName="txCorreoElectronico" />
+                <ScalarProperty Name="txCodConadis" ColumnName="txCodConadis" />
+                <ScalarProperty Name="txTelefono" ColumnName="txTelefono" />
+                <ScalarProperty Name="txDireccion" ColumnName="txDireccion" />
+                <ScalarProperty Name="ciLocalidad" ColumnName="ciLocalidad" />
+                <ScalarProperty Name="ciEstado" ColumnName="ciEstado" />
+                <ScalarProperty Name="ciUsuarioModifica" ColumnName="ciUsuarioModifica" />
+                <ScalarProperty Name="fcModificacion" ColumnName="fcModificacion" />
+                <ScalarProperty Name="ciUsuarioIngreso" ColumnName="ciUsuarioIngreso" />
+                <ScalarProperty Name="fcIngreso" ColumnName="fcIngreso" />
+                <ScalarProperty Name="cianios" ColumnName="cianios" />
+                <ScalarProperty Name="fcNacimiento" ColumnName="fcNacimiento" />
+                <ScalarProperty Name="NombresCompletos" ColumnName="NombresCompletos" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnuncioImages">
+            <EntityTypeMapping TypeName="DBSCCModel.AnuncioImages">
+              <MappingFragment StoreEntitySet="AnuncioImages">
+                <ScalarProperty Name="RegAnuncioFecha" ColumnName="RegAnuncioFecha" />
+                <ScalarProperty Name="RegAnuncioEstado" ColumnName="RegAnuncioEstado" />
+                <ScalarProperty Name="RegRutaImagen" ColumnName="RegRutaImagen" />
+                <ScalarProperty Name="RegId" ColumnName="RegId" />
+                <ScalarProperty Name="RegAnuncioId" ColumnName="RegAnuncioId" />
+                <ScalarProperty Name="RegAnuncioImagenId" ColumnName="RegAnuncioImagenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Anuncio">
+            <EntityTypeMapping TypeName="DBSCCModel.Anuncio">
+              <MappingFragment StoreEntitySet="Anuncio">
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="RegRutaImagen3" ColumnName="RegRutaImagen3" />
+                <ScalarProperty Name="RegRutaImagen2" ColumnName="RegRutaImagen2" />
+                <ScalarProperty Name="RegRutaImagen1" ColumnName="RegRutaImagen1" />
+                <ScalarProperty Name="DiaAnuncioHastaId" ColumnName="DiaAnuncioHastaId" />
+                <ScalarProperty Name="MesAnuncioHastaId" ColumnName="MesAnuncioHastaId" />
+                <ScalarProperty Name="AnioAnuncioHastaId" ColumnName="AnioAnuncioHastaId" />
+                <ScalarProperty Name="DiaAnuncioReg" ColumnName="DiaAnuncioReg" />
+                <ScalarProperty Name="MesAnuncioReg" ColumnName="MesAnuncioReg" />
+                <ScalarProperty Name="AnioAnuncioReg" ColumnName="AnioAnuncioReg" />
+                <ScalarProperty Name="RegAnuncioFecha" ColumnName="RegAnuncioFecha" />
+                <ScalarProperty Name="RegAnuncioEstado" ColumnName="RegAnuncioEstado" />
+                <ScalarProperty Name="RegAnuncioAcercaDe" ColumnName="RegAnuncioAcercaDe" />
+                <ScalarProperty Name="RegAnuncioPalabraClave" ColumnName="RegAnuncioPalabraClave" />
+                <ScalarProperty Name="RegCodigoUnico" ColumnName="RegCodigoUnico" />
+                <ScalarProperty Name="RegId" ColumnName="RegId" />
+                <ScalarProperty Name="RegAnuncioId" ColumnName="RegAnuncioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="DBSCCModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="DiaReg" ColumnName="DiaReg" />
+                <ScalarProperty Name="MesReg" ColumnName="MesReg" />
+                <ScalarProperty Name="AnioReg" ColumnName="AnioReg" />
+                <ScalarProperty Name="RegFecha" ColumnName="RegFecha" />
+                <ScalarProperty Name="RegPreciProducto" ColumnName="RegPreciProducto" />
+                <ScalarProperty Name="RegDescripcionProducto" ColumnName="RegDescripcionProducto" />
+                <ScalarProperty Name="RegTituloProducto" ColumnName="RegTituloProducto" />
+                <ScalarProperty Name="RegStreamImagen" ColumnName="RegStreamImagen" />
+                <ScalarProperty Name="RegRutaImagen" ColumnName="RegRutaImagen" />
+                <ScalarProperty Name="RegCodigoUnico" ColumnName="RegCodigoUnico" />
+                <ScalarProperty Name="RegId" ColumnName="RegId" />
+                <ScalarProperty Name="RegPerfilId" ColumnName="RegPerfilId" />
+                <ScalarProperty Name="RegProductId" ColumnName="RegProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="works">
+            <EntityTypeMapping TypeName="DBSCCModel.works">
+              <MappingFragment StoreEntitySet="works">
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="DiaReg" ColumnName="DiaReg" />
+                <ScalarProperty Name="MesReg" ColumnName="MesReg" />
+                <ScalarProperty Name="AnioReg" ColumnName="AnioReg" />
+                <ScalarProperty Name="RegFecha" ColumnName="RegFecha" />
+                <ScalarProperty Name="RegDescripcion" ColumnName="RegDescripcion" />
+                <ScalarProperty Name="RegStreamImagen" ColumnName="RegStreamImagen" />
+                <ScalarProperty Name="RegRutaImagen" ColumnName="RegRutaImagen" />
+                <ScalarProperty Name="RegCodigoUnico" ColumnName="RegCodigoUnico" />
+                <ScalarProperty Name="RegId" ColumnName="RegId" />
+                <ScalarProperty Name="RegPerfilId" ColumnName="RegPerfilId" />
+                <ScalarProperty Name="RegWorksId" ColumnName="RegWorksId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
